@@ -1240,6 +1240,32 @@ test('remark-validate-links', function (t) {
     }
   })
 
+  t.test('should work with anchors', function (st) {
+    st.plan(1)
+
+    childProcess.exec(
+      [
+        bin,
+        '--no-config',
+        '--no-ignore',
+        '--use',
+        '../..=repository:false',
+        '--use',
+        '../sort',
+        'anchor.md'
+      ].join(' '),
+      onexec
+    )
+
+    function onexec(err, stdout, stderr) {
+      st.deepEqual(
+        [err, strip(stderr)],
+        [null, 'anchor.md: no issues found\n'],
+        'should work'
+      )
+    }
+  })
+
   t.test('should support self-hosted Git solutions', function (st) {
     st.plan(1)
 
