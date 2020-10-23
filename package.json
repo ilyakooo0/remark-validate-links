@@ -41,7 +41,7 @@
     "index.js"
   ],
   "dependencies": {
-    "github-slugger": "^1.0.0",
+    "github-slugger": "https://github.com/Flet/github-slugger#custom-regex-filter",
     "hosted-git-info": "^3.0.0",
     "mdast-util-to-string": "^1.0.0",
     "propose": "0.0.5",
